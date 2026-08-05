@@ -1,0 +1,16 @@
+{
+  "name": "링 더 벨",
+  "short_name": "링더벨",
+  "description": "피의 게임X 5일차 데스매치. 4색 카드로 조합을 만들고, 상대가 약할 때 종을 쳐라. 2:2 팀전.",
+  "lang": "ko",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#101418",
+  "theme_color": "#101418",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
