@@ -18,9 +18,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="링더벨" />
+    <script>
+      // G게임 입구 주소의 /ringbell/ 아래에서 열리면 «홈 화면에 추가»가 링더벨 앱이 아니라 G게임 앱(범위 /)으로 깔리게
+      // — 블랙리스트·독잔과 같다(2026-11-23 G게임 헤드 부탁 · roulette-web docs/g-game.md 「G게임 한 앱 계획」).
+      // 링더벨 자기 주소(ringbell.….workers.dev)·GitHub Pages(/ringbell-web/)·로컬에선 위 줄 그대로(링더벨 앱).
+      // 판정은 src/hub.ts underHub와 같다.
+      (function () {
+        var p = location.pathname;
+        if (/^ringbell\./i.test(location.hostname)) return;
+        if (p !== "/ringbell" && p.indexOf("/ringbell/") !== 0) return;
+        var set = function (sel, attr, v) { var e = document.querySelector(sel); if (e) e.setAttribute(attr, v); };
+        set('link[rel="manifest"]', "href", "/manifest.webmanifest");
+        set('link[rel="apple-touch-icon"]', "href", "/icons/apple-touch-icon.png");
+        set('meta[name="apple-mobile-web-app-title"]', "content", "G게임");
+      })();
+    </script>
     <title>링 더 벨</title>
-    <script type="module" crossorigin src="./assets/index-CZPtjgwv.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-RwWNWjWE.css">
+    <script type="module" crossorigin src="./assets/index-BSSJN-SB.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CdVvMFOm.css">
   </head>
   <body>
     <div id="root"></div>
